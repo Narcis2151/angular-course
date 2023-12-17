@@ -11,7 +11,5 @@ export class AppComponent {
   onCourseViewed(course: Course) {
     console.log("App Component - Course Card Clicked: ", course);
   }
-  coreCourse = COURSES[0];
-  rxjsCourse = COURSES[1];
-  ngrxCourse = COURSES[2];
+  courses = COURSES;
 }
