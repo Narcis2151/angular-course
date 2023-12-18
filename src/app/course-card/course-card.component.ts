@@ -20,4 +20,8 @@ export class CourseCardComponent {
     console.log("Course-Card Component clicked...ready to print info");
     this.courseSelected.emit(this.course);
   }
+
+  cardClasses() {
+    return { beginner: this.course.category == "BEGINNER" };
+  }
 }
