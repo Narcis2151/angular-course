@@ -1,9 +1,12 @@
 <div class="course-card" [ngClass]="cardClasses()">
   <div class="course-title">{{ index }} {{ course.description }}</div>
 
-  @if(course.iconUrl) {
-  <img width="300" alt="Angular Logo" [src]="course.iconUrl" />
-  }
+  
+  <img width="300" alt="Angular Logo" *ngIf="isImageVisible()"; else noImage" [src]="course.iconUrl" />
+
+  <ng-template #noImage>
+    <img width="300" alt="Angular Logo" src="https://via.placeholder.com/300x300" />
+  </ng-template>
 
   <div class="course-description">
     {{ course.longDescription }}
