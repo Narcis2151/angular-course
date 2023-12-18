@@ -1,16 +1,9 @@
 <div class="top-menu">
-  <img
-    class="logo"
-    src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png"
-  />
+  <img class="logo" src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png" />
 </div>
 
+<button (click)="onAddCourse()" class="button">Add Course</button>
 <div class="courses">
-  @for (course of courses; track course; let i = $index; let isFirst = $first) {
-  <course-card
-    [course]="course"
-    [class.is-first]="isFirst"
-    (courseSelected)="onCourseViewed($event)"
-  ></course-card>
-  }
+  <course-card *ngFor="let course of courses; index as i; first as isFirst" [course]="course" [class.is-first]="isFirst"
+    (courseSelected)="onCourseViewed($event)"></course-card>
 </div>

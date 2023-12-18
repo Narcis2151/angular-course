@@ -1,16 +1,12 @@
 <div class="course-card" [ngClass]="cardClasses()">
   <div class="course-title">{{ index }} {{ course.description }}</div>
 
-  
-  <img width="300" alt="Angular Logo" *ngIf="isImageVisible()"; else noImage" [src]="course.iconUrl" />
-
-  <ng-template #noImage>
-    <img width="300" alt="Angular Logo" src="https://via.placeholder.com/300x300" />
-  </ng-template>
+  <img width="300" alt="Angular Logo" *ngIf="isImageVisible()" [src]="course.iconUrl" />
 
   <div class="course-description">
     {{ course.longDescription }}
   </div>
+
   <div class="course-category">
     @switch (course.category) { @case ('BEGINNER') {
     <div class="category">Beginner</div>
@@ -20,5 +16,6 @@
     <div class="category">Advanced</div>
     } @default { } }
   </div>
+
   <button class="button" (click)="onCourseViewed()">View Course</button>
 </div>
